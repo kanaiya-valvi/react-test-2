@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import Board from "./layout/Board";
+import Modal from "./UI/Modal/Modal";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="constainer">      
-    </div>
-  )
+    <main className="constainer">
+      <Modal />
+      <Board />
+    </main>
+  );
 }
 
-export default App
+export default App;

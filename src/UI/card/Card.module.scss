@@ -1,0 +1,7 @@
+.card {
+  padding: 1rem;
+  box-shadow: 0 0 12px #777;
+  display: grid;
+  gap:1rem;
+  grid-template-rows: auto 1fr;
+}

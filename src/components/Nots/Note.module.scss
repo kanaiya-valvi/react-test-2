@@ -1,0 +1,15 @@
+.notes {
+  background-color: #fff;
+  border: 1px solid #228be6;
+  border-radius: 4px;
+  &__title {
+    font-size: 1.6rem;
+    background-color: #228be6;
+    color: #fff;
+    padding: 1rem;
+  }
+  &__discription {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+}

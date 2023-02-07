@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  select {
+  }
+  input {
+  }
+  textarea {
+  }
+  select,
+  input,
+  textarea {
+    padding: 0.5rem;
+    border: 1px solid #376bfa;
+    &:focus {
+      outline: none;      
+    }
+  }
+}
