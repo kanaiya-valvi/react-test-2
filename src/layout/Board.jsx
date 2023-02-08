@@ -11,8 +11,7 @@ const Board = () => {
   const story = list.filter((item) => item.categoy === "Story");
   const progress = list.filter((item) => item.categoy === "In Progress");
   const testing = list.filter((item) => item.categoy === "Testing");
-  const done = list.filter((item) => item.categoy === "Done");
-  console.log(story);
+  const done = list.filter((item) => item.categoy === "Done");  
   return (
     <>
       <div className={style.board}>
