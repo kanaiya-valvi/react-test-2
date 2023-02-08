@@ -1,9 +1,8 @@
 import style from "./Note.module.scss";
-const Note = ({ id, title, discription }) => {
-  console.log(title);
+const Note = ({  title, discription }) => {  
   return (
     <>
-      <div key={id} className={style.notes}>
+      <div className={style.notes}>
         <h1 className={style.notes__title}>{title}</h1>
         <p className={style.notes__discription}>{discription}</p>
       </div>

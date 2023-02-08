@@ -1,15 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import React from "react";
-
+const intialValue = {
+  modal: false,
+  notes: [],
+};
 const userSlice = createSlice({
   name: "Notes",
-  initialState: [],
+  initialState: intialValue,
   reducers: {
     addNote(state, action) {
-      state.push(action.payload);
+      state.notes.push(action.payload);
+    },
+    showModal(state, action) {      
+      state.modal = action.payload;
+    },
+    hideModal(state, action) {      
+      state.modal = action.payload;
     },
   },
 });
 
 export default userSlice.reducer;
-export const { addNote } = userSlice.actions;
+export const { addNote, showModal, hideModal } = userSlice.actions;

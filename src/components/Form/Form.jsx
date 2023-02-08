@@ -1,21 +1,30 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addNote } from "../../store/Slices/UserSlice";
 import style from "./Form.module.scss";
 
 const Form = () => {
   const dispatch = useDispatch();
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => dispatch(addNote(data));
+  const [categoy, setCategoy] = useState("Story");
+  const [note, setNote] = useState("");
+  const [discription, setDiscription] = useState("");
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    if (note === "" || discription === "") {
+      return <p>All files are required</p>;
+    }
+    const data = { categoy, note, discription };
+    dispatch(addNote(data));
+    setCategoy("");
+    setNote("");
+    setDiscription("");
+  };
   return (
-    <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
-      <select {...register("categoy")}>
+    <form className={style.form} onSubmit={submitHandler}>
+      <select
+        value={categoy}
+        onChange={(event) => setCategoy(event.target.value)}>
         <option value="Story">Story</option>
         <option value="In Progress">In Progress</option>
         <option value="Testing">Testing</option>
@@ -23,17 +32,17 @@ const Form = () => {
       </select>
       <input
         type="text"
-        defaultValue="Notes"
-        {...register("note", { required: true })}
+        value={note}
+        placeholder="Enter Notes title"
+        onChange={(event) => setNote(event.target.value)}
       />
       <textarea
         id="w3review"
-        name="w3review"
-        defaultValue="Enter Your Notes"
-        {...register("discription", { required: true })}
+        value={discription}
+        placeholder="Enter your Discription"
+        onChange={(event) => setDiscription(event.target.value)}
       />
-      {errors.discription && <span>This field is required</span>}
-      <input type="submit" />
+      <button type="submit">Submit</button>
     </form>
   );
 };

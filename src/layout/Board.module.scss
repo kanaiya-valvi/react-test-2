@@ -4,11 +4,25 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   min-width: 100vh;
+  &__title {
+    text-align: center;
+  }
   &__notes {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
     gap: 1rem;
   }
+}
+.addNewNote {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  border: 2px solid #3c00ff;
+  border-radius: 4px;
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #000;
+  background-color: #3c00ff69;
 }

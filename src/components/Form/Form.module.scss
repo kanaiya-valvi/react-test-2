@@ -3,19 +3,24 @@
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
-  select {
-  }
-  input {
-  }
-  textarea {
-  }
   select,
   input,
   textarea {
+    width: 40rem;
+    font-size: 1.4rem;
     padding: 0.5rem;
     border: 1px solid #376bfa;
     &:focus {
-      outline: none;      
+      outline: none;
     }
+  }
+  button {
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #4dabf7;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    color: #fff;
   }
 }
