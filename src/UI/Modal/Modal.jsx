@@ -9,6 +9,7 @@ const Modal = () => {
   const closeModel = () => {
     dispatch(hideModal(false));
   };
+  
   return (
     <div className={style.modal}>
       <div className={style.modal__backdrop} onClick={closeModel}>        

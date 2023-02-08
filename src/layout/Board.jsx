@@ -8,56 +8,66 @@ import style from "./Board.module.scss";
 const Board = () => {
   const dispatch = useDispatch();
   const list = useSelector((state) => state.list.notes);
-  const story = list.filter((item) => item.categoy === "Story");
-  const progress = list.filter((item) => item.categoy === "In Progress");
-  const testing = list.filter((item) => item.categoy === "Testing");
-  const done = list.filter((item) => item.categoy === "Done");  
+
+  const story = list.filter((item) => item.category === "Story");
+  const progress = list.filter((item) => item.category === "In Progress");
+  const testing = list.filter((item) => item.category === "Testing");
+  const done = list.filter((item) => item.category === "Done");
+
   return (
     <>
       <div className={style.board}>
-        <Card>
+        <Card section="story">
           <h1 className={style.board__title}>Story</h1>
           <div className={style.board__notes}>
-            {story.map((item, mov) => (
+            {story.map((item,mov) => (
               <Note
+              index={mov}
                 title={item.note}
-                key={"1" + mov}
+                key={item.id}
+                id={item.id}
                 discription={item.discription}
               />
             ))}
           </div>
         </Card>
-        <Card>
-          <h1 className={style.board__title}>progress</h1>
+        <Card section="progress">
+          <h1 className={style.board__title}>Progress</h1>
           <div className={style.board__notes}>
-            {progress.map((item, mov) => (
+            {progress.map((item,mov) => (
               <Note
+              index={mov}
                 title={item.note}
-                key={"2" + mov}
+                key={item.id}
+                id={item.id}
                 discription={item.discription}
               />
             ))}
           </div>
         </Card>
-        <Card>
-          <h1 className={style.board__title}>testing</h1>
+        <Card section="testing">
+          <h1 className={style.board__title}>Testing</h1>
           <div className={style.board__notes}>
-            {testing.map((item, mov) => (
+            {testing.map((item,mov) => (
               <Note
+              index={mov}
                 title={item.note}
-                key={"3" + mov}
+                key={item.id}
+                id={item.id}
                 discription={item.discription}
               />
             ))}
           </div>
         </Card>
-        <Card>
+        <Card section="done">
           <h1 className={style.board__title}>Done</h1>
           <div className={style.board__notes}>
-            {done.map((item, mov) => (
+            {done.map((item,mov) => (
               <Note
+              index={mov}
                 title={item.note}
-                key={"4" + mov}
+                key={item.id}
+                id={item.id}
                 discription={item.discription}
               />
             ))}

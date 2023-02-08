@@ -1,30 +1,32 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNote } from "../../store/Slices/UserSlice";
 import style from "./Form.module.scss";
 
 const Form = () => {
   const dispatch = useDispatch();
-  const [categoy, setCategoy] = useState("Story");
+  const list = useSelector((id) => id.list.notes);
+  const id = useSelector((id) => id.list.noOfList);
+  const [category, setCategory] = useState("Story");
   const [note, setNote] = useState("");
-  const [discription, setDiscription] = useState("");
+  const [discription, setDiscription] = useState("");  
 
   const submitHandler = (event) => {
     event.preventDefault();
     if (note === "" || discription === "") {
       return <p>All files are required</p>;
     }
-    const data = { categoy, note, discription };
+    const data = { id, category, note, discription };
     dispatch(addNote(data));
-    setCategoy("");
+    setCategory("Story");
     setNote("");
     setDiscription("");
   };
   return (
     <form className={style.form} onSubmit={submitHandler}>
       <select
-        value={categoy}
-        onChange={(event) => setCategoy(event.target.value)}>
+        value={category}
+        onChange={(event) => setCategory(event.target.value)}>
         <option value="Story">Story</option>
         <option value="In Progress">In Progress</option>
         <option value="Testing">Testing</option>
