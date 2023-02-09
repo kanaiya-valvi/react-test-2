@@ -6,13 +6,23 @@
   select,
   input,
   textarea {
-    width: 40rem;
-    font-size: 1.4rem;
-    padding: 0.5rem;
-    border: 1px solid #376bfa;
+    padding: 1rem;
+    resize: none;
+    font-size: 1.5rem;
+    border: 1.5px solid #376bfa;
+    background-color: #376bfa18;
+    border-radius: 4px;
     &:focus {
+      box-shadow: 0 0 0px 3px #376bfa6f;
       outline: none;
     }
+    &::placeholder {
+      color: #000000a5;
+      font-size: 1.6rem;
+    }
+  }
+  textarea {
+    min-height: 15rem;
   }
   button {
     border: none;
@@ -24,3 +34,12 @@
     color: #fff;
   }
 }
+
+
+
+// "#38d9a9",
+//       "#66d9e8",
+//       "#91a7ff",
+//       "#ffc078",
+//       "#2b8a3e",
+//       "#ffd43b",

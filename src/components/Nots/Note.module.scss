@@ -1,16 +1,73 @@
 .notes {
-  background-color: #fff;
-  border: 1px solid #228be6;
   border-radius: 4px;
-  margin:.5rem;
+  margin: 0.5rem;
+  word-wrap: break-word;
   &__title {
     font-size: 1.6rem;
-    background-color: #228be6;
-    color: #fff;
     padding: 1rem;
   }
   &__discription {
     font-size: 1.4rem;
     padding: 1rem;
+  }
+  &__delate{
+    font-size: 1.2rem;
+    display: block;  
+    padding: .5rem;
+    margin-top: 1rem;
+    margin-top: 1rem 2rem;
+    background-color: red;
+    border: none;
+    font-weight: bolder;
+    color:#fff;    
+  }
+}
+
+.note_1 {
+  border: 2px solid #38d9a9;
+  .title {
+    background-color: #38d9a9;
+    color: #000;
+  }
+  .discription {
+    font-size: 1.4rem;
+    padding: 1rem;
+    background-color: #e6fcf5;
+  }
+}
+.note_2 {
+  border: 2px solid #ae3ec9;
+  .title {
+    background-color: #ae3ec9;
+    color: #000;
+  }
+  .discription {
+    font-size: 1.4rem;
+    padding: 1rem;
+    background-color: #f8f0fc;
+  }
+}
+.note_3 {
+  border: 2px solid #ffa94d;
+  .title {
+    background-color: #ffa94d;
+    color: #000;
+  }
+  .discription {
+    font-size: 1.4rem;
+    padding: 1rem;
+    background-color: #fff4e6;
+  }
+}
+.note_4 {
+  border: 2px solid #ff8787;
+  .title {
+    background-color: #ff8787;
+    color: #000;
+  }
+  .discription {
+    font-size: 1.4rem;
+    padding: 1rem;
+    background-color: #fff5f5;
   }
 }

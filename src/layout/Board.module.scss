@@ -1,20 +1,24 @@
-.board {
-  padding: 2rem;
+.board {  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  min-width: 100vh;
+  min-width: 100vw;
+  background-color: #e000;  
   &__title {
     background-color: #5fbaff;
     padding: 1rem;
     text-align: center;
     color: #000;
+    height: 5rem;
   }
   &__notes {
     display: flex;
     flex-direction: column;
-
+    min-height: 90vh;
+    max-height: 90vh;
+    overflow-y: scroll;
   }
 }
+
 .addNewNote {
   position: absolute;
   bottom: 2rem;
