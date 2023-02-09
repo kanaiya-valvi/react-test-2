@@ -35,7 +35,11 @@ const userSlice = createSlice({
     },
     deleteNote(state, action) {
       state.notes = state.notes.filter((item) => item.id !== action.payload);
-      if (state.notes.length === 0) state.noOfList = 0;
+      if (state.notes.length === 0) {
+        state.noOfList = 0;
+        localStorage.removeItem("list");
+        return;
+      }
       const list = { ...state };
       localStorage.setItem("list", JSON.stringify(list));
     },
