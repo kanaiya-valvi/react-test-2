@@ -13,7 +13,6 @@ if (intialValue.notes.length === 0) {
   intialValue.noOfList = 0;
 }
 
-// const
 const userSlice = createSlice({
   name: "Notes",
   initialState: intialValue,
